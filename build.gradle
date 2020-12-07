@@ -1,0 +1,11 @@
+plugins {
+    id 'application'
+}
+
+mainClassName = 'com.github.zjohnson.wanikani.main.WaniKani'
+
+jar {
+    manifest{
+        attributes "Main-Class": mainClassName
+    }
+}
