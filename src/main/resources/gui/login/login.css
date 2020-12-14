@@ -1,0 +1,18 @@
+#login-border-pane {
+    -fx-background-image: url('/gui/login/login_background.jpg');
+    -fx-background-repeat: no-repeat;
+}
+
+#login-vbox {
+    -fx-spacing: 20;
+    -fx-alignment: CENTER;
+    -fx-padding: 180;
+}
+
+/*#login-button {*/
+/*    -fx-background-color: ;*/
+/*}*/
+
+/*#api-text-field {*/
+/*    -fx-max-width: ${parent.width};*/
+/*}*/

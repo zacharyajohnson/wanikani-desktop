@@ -1,6 +1,6 @@
 package com.github.zjohnson.wanikani.main;
 
-import com.github.zjohnson.wanikani.gui.common.WaniKaniStage;
+import com.github.zjohnson.wanikani.gui.login.LoginStage;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -13,8 +13,8 @@ public class WaniKani extends Application {
 
     @Override
     public void start(Stage stage) {
-        WaniKaniStage waniKaniStage = WaniKaniStage.getInstance();
-        waniKaniStage.show();
+        LoginStage loginStage = new LoginStage();
+        loginStage.show();
     }
 
 

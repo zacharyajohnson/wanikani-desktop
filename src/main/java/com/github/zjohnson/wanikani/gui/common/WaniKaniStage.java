@@ -1,29 +1,37 @@
 package com.github.zjohnson.wanikani.gui.common;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class WaniKaniStage extends Stage {
+import java.io.IOException;
+import java.net.MalformedURLException;
 
-    private final String APP_TITLE = "Login";
-    private final Image APP_ICON = new Image("/gui/common/app_icon.png");
-
-    private static WaniKaniStage waniKaniStage;
-
-    private WaniKaniStage() {
-        this.setTitle(APP_TITLE);
+public abstract class WaniKaniStage extends Stage {
+    protected WaniKaniStage() {
         this.initStyle(StageStyle.DECORATED);
-        this.getIcons().add(APP_ICON);
-
+        this.getIcons().add(new Image("/gui/common/app_icon.png"));
+        this.setTitle("WaniKani Desktop");
     }
 
-    public static WaniKaniStage getInstance() {
-        if(waniKaniStage == null) {
-            waniKaniStage = new WaniKaniStage();
+    protected final void setStageTitle(String title) {
+        this.setTitle(this.getTitle() + " - " + title);
+    }
+
+    protected final void loadFXML(String classPath) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(classPath));
+
+        try {
+            Scene scene = new Scene(loader.<Parent>load());
+            this.setScene(scene);
+        } catch(MalformedURLException e) {
+            System.err.println("Could not find background image from " + classPath + "\n\n" + e.getCause());
+        } catch (IOException e) {
+            //TODO Fix this to print actual stack traces and not just print to standard err
+            System.err.println("Could not load background image from disk\n\n" + e.getCause());
         }
-
-        return waniKaniStage;
     }
-
 }
