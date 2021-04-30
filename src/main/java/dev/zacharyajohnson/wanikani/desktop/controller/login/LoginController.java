@@ -1,4 +1,4 @@
-package com.github.zjohnson.wanikani.controller.login;
+package dev.zacharyajohnson.wanikani.desktop.controller.login;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

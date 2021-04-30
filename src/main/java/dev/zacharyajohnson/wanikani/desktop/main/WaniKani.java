@@ -1,6 +1,6 @@
-package com.github.zjohnson.wanikani.main;
+package dev.zacharyajohnson.wanikani.desktop.main;
 
-import com.github.zjohnson.wanikani.gui.login.LoginStage;
+import dev.zacharyajohnson.wanikani.desktop.gui.login.LoginStage;
 import javafx.application.Application;
 import liquibase.Contexts;
 import liquibase.LabelExpression;

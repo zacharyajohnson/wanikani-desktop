@@ -3,7 +3,7 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
-mainClassName = 'com.github.zjohnson.wanikani.main.WaniKani';
+mainClassName = 'dev.zacharyajohnson.wanikani.desktop.main.WaniKani';
 
 repositories  {
     mavenCentral()

@@ -1,4 +1,4 @@
-package com.github.zjohnson.wanikani.model;
+package dev.zacharyajohnson.wanikani.desktop.model;
 
 public final class Vocab extends JapaneseWriting {
     private String[] meaning;
