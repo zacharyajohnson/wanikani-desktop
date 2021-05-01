@@ -1,4 +1,4 @@
-package dev.zacharyajohnson.wanikani.desktop.gui.common;
+package dev.zacharyajohnson.wanikani.desktop.gui.common.stage;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -1,6 +1,6 @@
 package dev.zacharyajohnson.wanikani.desktop.gui.login;
 
-import dev.zacharyajohnson.wanikani.desktop.gui.common.WaniKaniStage;
+import dev.zacharyajohnson.wanikani.desktop.gui.common.stage.WaniKaniStage;
 import javafx.stage.Screen;
 
 
@@ -12,7 +12,7 @@ public class LoginStage extends WaniKaniStage {
         super.loadFXML("/gui/login/login.fxml");
 
         this.centerOnScreen();
-//        this.setResizable(false);
+        this.setResizable(false);
         this.setHeight(Screen.getPrimary().getVisualBounds().getHeight() / 2);
         this.setWidth(Screen.getPrimary().getVisualBounds().getWidth() / 3);
     }

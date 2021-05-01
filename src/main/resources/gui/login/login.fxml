@@ -7,14 +7,14 @@
 <?import javafx.scene.control.Button?>
 
 <BorderPane id="login-border-pane" xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="dev.zacharyajohnson.wanikani.desktop.controller.login.LoginController">
+        fx:controller="dev.zacharyajohnson.wanikani.desktop.gui.controller.login.LoginController">
     <stylesheets>
-        <URL value="@login.css"></URL>
+        <URL value="@login.css"/>
     </stylesheets>
     <center>
         <VBox id="login-vbox">
-            <TextField fx:id="apiV2Key" id="api-text-field" text="API KEY"></TextField>
-            <Button id="login-button" text="Login" onAction="#authenticateUser"></Button>
+            <TextField fx:id="apiV2Key" id="api-text-field" text="API KEY"/>
+            <Button id="login-button" text="Login" onAction="#authenticateUser"/>
         </VBox>
     </center>
 </BorderPane>
