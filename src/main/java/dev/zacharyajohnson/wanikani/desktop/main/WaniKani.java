@@ -41,7 +41,7 @@ public class WaniKani extends Application {
 
         try(Connection conn = ds.getConnection()) {
             Database database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(conn));
-            Liquibase liquibase = new Liquibase("h2/liquibase/db/changesets/dbchangelog.xml", new ClassLoaderResourceAccessor(),database);
+            Liquibase liquibase = new Liquibase("db/liquibase/changesets/dbchangelog.xml", new ClassLoaderResourceAccessor(),database);
             liquibase.update(new Contexts(), new LabelExpression());
 
         } catch (SQLException | LiquibaseException throwables) {
