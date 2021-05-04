@@ -35,7 +35,7 @@ public class WaniKani extends Application {
     private void initializeDBAndRunLiquibase() {
         String homeDirectory = System.getProperty("user.home");
         JdbcDataSource ds = new JdbcDataSource();
-        ds.setURL("jdbc:h2:" + homeDirectory + "/.h2/wanikani-desktop/wanikani-desktop");
+        ds.setURL("jdbc:h2:" + homeDirectory + "/.wanikani/db/h2/wanikani-desktop");
         ds.setUser("sa");
         ds.setPassword("sa");
 
