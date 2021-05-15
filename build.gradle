@@ -16,14 +16,17 @@ javafx {
 
 dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.11.3';
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.11.3';
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.3';
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.11.3';
     // https://mvnrepository.com/artifact/com.h2database/h2
-    compile 'com.h2database:h2:1.4.197';
+    implementation 'com.h2database:h2:1.4.197';
 
     // https://mvnrepository.com/artifact/org.liquibase/liquibase-core
-    compile group: 'org.liquibase', name: 'liquibase-core', version: '4.2.2'
+    implementation group: 'org.liquibase', name: 'liquibase-core', version: '4.2.2'
 
+
+    // https://mvnrepository.com/artifact/org.mybatis/mybatis
+    implementation group: 'org.mybatis', name: 'mybatis', version: '3.5.7'
 
     testCompile 'org.mockito:mockito-core:3.5.13';
     testCompile 'junit:junit:4.12';
