@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.zacharyajohnson.wanikani.desktop.dao.UserDAO">
+    <select id="getUser" parameterType="String" resultType="dev.zacharyajohnson.wanikani.desktop.model.User">
+        SELECT
+               ID, USER_NAME, LEVEL, API_KEY
+        FROM
+             USER
+        WHERE
+            ID = #{id}
+    </select>
+
+    <insert id="createUser" parameterType="dev.zacharyajohnson.wanikani.desktop.model.User">
+        INSERT INTO
+            USER(ID, USER_NAME, LEVEL, API_KEY, LOGGED_IN)
+            VALUES(#{id}, #{username}, #{level}, #{apiKey}, #{isLoggedIn})
+    </insert>
+</mapper>
