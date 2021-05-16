@@ -1,20 +1,18 @@
 package dev.zacharyajohnson.wanikani.desktop.model;
 
 public final class User {
-
-	private static final User user = new User();
-
+	private String id;
 	private String username;
-	private String password;
-	private String email;
-	private int currentLevel;
+	private int level;
+	private String apiKey;
+	private boolean isLoggedIn;
 
-	private User() {
-
+	public String getId() {
+		return this.id;
 	}
-	
-	public static User getInstance() {
-		return user;
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
@@ -25,28 +23,38 @@ public final class User {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return this.password;
+	public String getApiKey() {
+		return this.apiKey;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setApiKey(String apiKey) {
+		this.apiKey = apiKey;
 	}
 
-	public String getEmail() {
-		return this.email;
+	public int getLevel() {
+		return this.level;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setLevel(int level) {
+		this.level = level;
 	}
 
-	public int getCurrentLevel() {
-		return this.currentLevel;
+	public boolean isLoggedIn() {
+		return this.isLoggedIn;
 	}
 
-	public void setCurrentLevel(int currentLevel) {
-		this.currentLevel = currentLevel;
+	public void setIsLoggedIn(boolean isLoggedIn) {
+		this.isLoggedIn = isLoggedIn;
 	}
 
+	@Override
+	public String toString() {
+		return "User{" +
+				"id='" + id + '\'' +
+				", userName='" + username + '\'' +
+				", level=" + level +
+				", apiKey='" + apiKey + '\'' +
+				", isLoggedIn='" + isLoggedIn + '\'' +
+				'}';
+	}
 }

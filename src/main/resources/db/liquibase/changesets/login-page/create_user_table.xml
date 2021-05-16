@@ -5,16 +5,25 @@
 
     <changeSet id="Create User Table" author="zacharyajohnson">
         <createTable tableName="USER">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_USER"></constraints>
+            </column>
+
             <column name="USER_NAME" type="VARCHAR(50)">
-                <constraints nullable="false" primaryKey="true"></constraints>
-            </column>
-            <column name="CURRENT_LEVEL" type="SMALLINT">
-                <constraints nullable="false"></constraints>
-            </column>
-            <column name="API_KEY" type="VARCHAR(50)">
                 <constraints nullable="false"></constraints>
             </column>
 
+            <column name="LEVEL" type="SMALLINT">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="API_KEY" type="VARCHAR(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="LOGGED_IN" type="BIT">
+                <constraints nullable="false"></constraints>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>
