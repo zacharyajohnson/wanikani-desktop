@@ -13,19 +13,19 @@ import java.io.StringWriter;
 
 public class ExceptionDialog extends Alert {
 
-    public ExceptionDialog(Stage stage, String message) {
+    public ExceptionDialog(String message) {
         this();
-        this.initOwner(stage);
+//        this.initOwner(stage);
         this.setContentText(message);
     }
 
-    public ExceptionDialog(Stage stage, Exception e) {
+    public ExceptionDialog(Stage stage, Throwable e) {
         this();
         this.initOwner(stage);
         this.createExceptionDisplayArea(e);
     }
 
-    public ExceptionDialog(Exception e) {
+    public ExceptionDialog(Throwable e) {
         this();
         this.createExceptionDisplayArea(e);
     }
@@ -36,7 +36,7 @@ public class ExceptionDialog extends Alert {
         this.setResizable(true);
     }
 
-    private void createExceptionDisplayArea(Exception e) {
+    private void createExceptionDisplayArea(Throwable e) {
         this.setContentText("An exception has occurred: ");
 
         StringWriter sw = new StringWriter();
