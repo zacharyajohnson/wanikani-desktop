@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="production">
+        <environment id="production">
+            <transactionManager type="org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory"/>
+            <dataSource type="org.apache.ibatis.datasource.unpooled.UnpooledDataSourceFactory">
+                <property name="driver" value="org.h2.Driver"/>
+                <property name="url" value="jdbc:h2:~/.wanikani/db/h2/wanikani-desktop"/>
+                <property name="username" value="sa"/>
+                <property name="password" value=""/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+       <mapper resource="mybatis/dao/UserDAO.xml"/>
+    </mappers>
+</configuration>

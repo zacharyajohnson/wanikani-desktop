@@ -1,5 +1,6 @@
 package dev.zacharyajohnson.wanikani.desktop.main;
 
+import dev.zacharyajohnson.wanikani.desktop.dao.common.sql.session.WaniKaniSqlSessionFactory;
 import dev.zacharyajohnson.wanikani.desktop.gui.common.exception.ExceptionDialog;
 import dev.zacharyajohnson.wanikani.desktop.gui.login.LoginStage;
 import javafx.application.Application;
@@ -12,14 +13,12 @@ import liquibase.database.DatabaseFactory;
 import liquibase.database.jvm.JdbcConnection;
 import liquibase.exception.LiquibaseException;
 import liquibase.resource.ClassLoaderResourceAccessor;
-import org.h2.jdbcx.JdbcDataSource;
 import javafx.stage.Stage;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 public class WaniKani extends Application {
-
     public static void main(String[] args) {
         launch();
     }
@@ -27,19 +26,12 @@ public class WaniKani extends Application {
     @Override
     public void start(Stage stage) {
         initializeDBAndRunLiquibase();
-
         LoginStage loginStage = new LoginStage();
         loginStage.show();
     }
 
     private void initializeDBAndRunLiquibase() {
-        String homeDirectory = System.getProperty("user.home");
-        JdbcDataSource ds = new JdbcDataSource();
-        ds.setURL("jdbc:h2:" + homeDirectory + "/.wanikani/db/h2/wanikani-desktop");
-        ds.setUser("sa");
-        ds.setPassword("sa");
-
-        try(Connection conn = ds.getConnection()) {
+        try(Connection conn = WaniKaniSqlSessionFactory.openSqlSession().getConnection()) {
             Database database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(conn));
             Liquibase liquibase = new Liquibase("db/liquibase/changesets/dbchangelog.xml", new ClassLoaderResourceAccessor(),database);
             liquibase.update(new Contexts(), new LabelExpression());
