@@ -1,4 +1,4 @@
-package dev.zacharyajohnson.wanikani.desktop.gui.controller.login;
+package dev.zacharyajohnson.wanikani.desktop.gui.login;
 
 import dev.zacharyajohnson.wanikani.desktop.gui.common.exception.ExceptionDialog;
 import dev.zacharyajohnson.wanikani.desktop.gui.login.LoginStage;

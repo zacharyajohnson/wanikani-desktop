@@ -7,7 +7,7 @@
 <?import javafx.scene.control.Button?>
 
 <BorderPane id="login-border-pane" xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="dev.zacharyajohnson.wanikani.desktop.gui.controller.login.LoginController">
+        fx:controller="dev.zacharyajohnson.wanikani.desktop.gui.login.LoginController">
     <stylesheets>
         <URL value="@login.css"/>
     </stylesheets>
