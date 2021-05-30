@@ -8,4 +8,6 @@ public interface UserDAO {
     User getUser(@Param("id") String id);
 
     void createUser(User user);
+
+    User getLoggedInUser();
 }

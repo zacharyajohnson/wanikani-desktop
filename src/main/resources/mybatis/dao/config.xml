@@ -3,6 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <typeAliases>
+        <typeAlias alias="User" type="dev.zacharyajohnson.wanikani.desktop.model.User"  />
+    </typeAliases>
+
     <environments default="production">
         <environment id="production">
             <transactionManager type="org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory"/>
@@ -14,6 +18,7 @@
             </dataSource>
         </environment>
     </environments>
+
     <mappers>
        <mapper resource="mybatis/dao/UserDAO.xml"/>
     </mappers>

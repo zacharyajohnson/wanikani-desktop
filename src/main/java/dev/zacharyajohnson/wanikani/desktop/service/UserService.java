@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 public class UserService {
 
-    private SqlSessionFactory  sqlSessionFactory = WaniKaniSqlSessionFactory.getInstance();
+    private SqlSessionFactory sqlSessionFactory = WaniKaniSqlSessionFactory.getInstance();
 
     public User getUserBy(String id) {
         try(SqlSession sqlSession = sqlSessionFactory.openSession()) {
@@ -23,6 +23,14 @@ public class UserService {
             UserDAO userDAO = sqlSession.getMapper(UserDAO.class);
             userDAO.createUser(user);
             sqlSession.commit();
+        }
+    }
+
+    public User getLoggedInUser() {
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserDAO userDAO = sqlSession.getMapper(UserDAO.class);
+
+            return userDAO.getLoggedInUser();
         }
     }
 }

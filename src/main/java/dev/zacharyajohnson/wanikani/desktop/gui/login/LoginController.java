@@ -30,7 +30,14 @@ public class LoginController {
         try {
             User user = waniKaniApi.getUser()
                     .get();
-            System.out.println(user);
+
+            /* We get the user from WaniKani and want to set
+             * isLoggedIn to true so we login automatically from now
+             * on as this user until the user explicitly logs outs
+             */
+            user.setIsLoggedIn(true);
+            userService.createUser(user);
+
             loginStage.close();
             //TODO Replace this with the Home stage after we are done with the login stage
             LoginStage loginStage1 = new LoginStage();
