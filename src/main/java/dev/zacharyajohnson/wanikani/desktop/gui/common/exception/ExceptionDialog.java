@@ -15,7 +15,12 @@ public class ExceptionDialog extends Alert {
 
     public ExceptionDialog(String message) {
         this();
-//        this.initOwner(stage);
+        this.setContentText(message);
+    }
+
+    public ExceptionDialog(Stage stage, String message) {
+        this();
+        this.initOwner(stage);
         this.setContentText(message);
     }
 

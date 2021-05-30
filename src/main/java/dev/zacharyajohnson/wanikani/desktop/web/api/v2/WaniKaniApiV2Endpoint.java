@@ -1,8 +1,6 @@
 package dev.zacharyajohnson.wanikani.desktop.web.api.v2;
 
-import dev.zacharyajohnson.wanikani.desktop.web.api.WaniKaniApiEndpoint;
-
-public enum WaniKaniApiV2Endpoint implements WaniKaniApiEndpoint {
+public enum WaniKaniApiV2Endpoint {
     USER_ENDPOINT("https://api.wanikani.com/v2/user");
 
     private String URL;

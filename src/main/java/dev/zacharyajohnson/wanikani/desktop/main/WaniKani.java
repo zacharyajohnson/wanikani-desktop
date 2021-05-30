@@ -20,6 +20,17 @@ import java.sql.SQLException;
 
 public class WaniKani extends Application {
     public static void main(String[] args) {
+        // Set uncaught exceptions to show up in case some fuckery happens that we are not aware of.
+        Thread.setDefaultUncaughtExceptionHandler((thread, throwable) -> {
+            if(Platform.isFxApplicationThread()) {
+                ExceptionDialog exceptionDialog = new ExceptionDialog(throwable);
+                exceptionDialog.showAndWait();
+            }else {
+                throwable.printStackTrace();
+            }
+
+        });
+
         launch();
     }
 
