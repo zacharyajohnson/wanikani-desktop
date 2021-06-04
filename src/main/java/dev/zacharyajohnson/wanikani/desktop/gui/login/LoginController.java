@@ -1,7 +1,6 @@
 package dev.zacharyajohnson.wanikani.desktop.gui.login;
 
 import dev.zacharyajohnson.wanikani.desktop.gui.common.exception.ExceptionDialog;
-import dev.zacharyajohnson.wanikani.desktop.gui.login.LoginStage;
 import dev.zacharyajohnson.wanikani.desktop.model.User;
 import dev.zacharyajohnson.wanikani.desktop.service.UserService;
 import dev.zacharyajohnson.wanikani.desktop.web.api.Http401Exception;
@@ -30,6 +29,8 @@ public class LoginController {
         try {
             User user = waniKaniApi.getUser()
                     .get();
+
+            //TODO What happens if we log out and log back in? We need a check for that
 
             /* We get the user from WaniKani and want to set
              * isLoggedIn to true so we login automatically from now

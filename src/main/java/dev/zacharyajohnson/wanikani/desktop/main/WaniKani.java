@@ -3,7 +3,9 @@ package dev.zacharyajohnson.wanikani.desktop.main;
 import dev.zacharyajohnson.wanikani.desktop.dao.common.sql.session.WaniKaniSqlSessionFactory;
 import dev.zacharyajohnson.wanikani.desktop.gui.common.exception.ExceptionDialog;
 import dev.zacharyajohnson.wanikani.desktop.gui.login.LoginStage;
+import dev.zacharyajohnson.wanikani.desktop.model.User;
 import dev.zacharyajohnson.wanikani.desktop.service.UserService;
+import dev.zacharyajohnson.wanikani.desktop.web.api.v2.WaniKaniApiV2;
 import javafx.application.Application;
 import javafx.application.Platform;
 import liquibase.Contexts;
@@ -40,12 +42,14 @@ public class WaniKani extends Application {
         initializeDBAndRunLiquibase();
 
         UserService userService = new UserService();
-        
-        if (userService.getLoggedInUser() == null) {
+        User loggedInUser = userService.getLoggedInUser();
+        if (loggedInUser == null) {
             LoginStage loginStage = new LoginStage();
             loginStage.show();
+
         } else {
             stage.show();
+            WaniKaniApiV2.getInstance().setApiKey(loggedInUser.getApiKey());
         }
 
     }

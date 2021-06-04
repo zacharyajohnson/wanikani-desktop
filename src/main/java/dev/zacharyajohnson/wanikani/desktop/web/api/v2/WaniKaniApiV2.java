@@ -51,9 +51,9 @@ public final class WaniKaniApiV2 implements WaniKaniApi {
         return httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString())
                 .thenApply((response) -> {
 
-                    if(response.statusCode() == 401) {
-                        throw new Http401Exception();
-                    }
+//                    if(response.statusCode() == 401) {
+//                        throw new Http401Exception();
+//                    }
 
                     try {
                         ObjectMapper mapper = new ObjectMapper();
@@ -70,6 +70,7 @@ public final class WaniKaniApiV2 implements WaniKaniApi {
                     } catch (JsonProcessingException e) {
                         e.printStackTrace();
                     }
+                    //TODO Need to handle this
                     return null;
                 });
 
