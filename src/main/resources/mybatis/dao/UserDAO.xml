@@ -25,4 +25,11 @@
         WHERE
             LOGGED_IN = true
     </select>
+
+    <update id="updateUser" parameterType="User">
+        UPDATE USER
+            SET LOGGED_IN = #{isLoggedIn}, USER_NAME = #{username}, LEVEL = #{level},
+                API_KEY = #{apiKey}
+            WHERE ID = #{id}
+    </update>
 </mapper>

@@ -10,4 +10,6 @@ public interface UserDAO {
     void createUser(User user);
 
     User getLoggedInUser();
+
+    void updateUser(User user);
 }

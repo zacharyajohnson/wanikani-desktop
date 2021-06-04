@@ -33,4 +33,13 @@ public class UserService {
             return userDAO.getLoggedInUser();
         }
     }
+
+    public void updateUser(User user) {
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserDAO userDAO = sqlSession.getMapper(UserDAO.class);
+
+            userDAO.updateUser(user);
+            sqlSession.commit();
+        }
+    }
 }

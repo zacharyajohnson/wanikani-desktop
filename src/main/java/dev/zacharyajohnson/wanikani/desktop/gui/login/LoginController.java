@@ -29,15 +29,21 @@ public class LoginController {
         try {
             User user = waniKaniApi.getUser()
                     .get();
+            user.setIsLoggedIn(true);
 
-            //TODO What happens if we log out and log back in? We need a check for that
+            if (userService.getUserBy(user.getId()) != null) {
+                userService.updateUser(user);
+                System.out.println("UPdate user");
+            } else {
+                userService.createUser(user);
+            }
+
 
             /* We get the user from WaniKani and want to set
              * isLoggedIn to true so we login automatically from now
              * on as this user until the user explicitly logs outs
              */
-            user.setIsLoggedIn(true);
-            userService.createUser(user);
+            ;
 
             loginStage.close();
             //TODO Replace this with the Home stage after we are done with the login stage
