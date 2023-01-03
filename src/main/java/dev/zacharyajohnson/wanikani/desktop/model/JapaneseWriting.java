@@ -1,10 +1,10 @@
-package com.github.zjohnson.wanikani.model;
+package dev.zacharyajohnson.wanikani.desktop.model;
 
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.Objects;
 
-import com.github.zjohnson.wanikani.enums.MasteryLevel;
+import dev.zacharyajohnson.wanikani.desktop.enums.MasteryLevel;
 
 public abstract class JapaneseWriting {
 

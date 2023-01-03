@@ -2,7 +2,7 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'com.github.zjohnson.wanikani.main.WaniKani'
+mainClassName = 'dev.zacharyajohnson.wanikani.desktop.main.WaniKani'
 
 jar {
     manifest{

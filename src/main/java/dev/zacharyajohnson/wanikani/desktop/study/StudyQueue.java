@@ -1,6 +1,6 @@
-package com.github.zjohnson.wanikani.study;
+package dev.zacharyajohnson.wanikani.desktop.study;
 
-import com.github.zjohnson.wanikani.model.JapaneseWriting;
+import dev.zacharyajohnson.wanikani.desktop.model.JapaneseWriting;
 
 import java.util.LinkedList;
 import java.util.List;
