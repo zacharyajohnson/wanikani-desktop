@@ -1,10 +1,10 @@
-package dev.zacharyajohnson.wanikani.desktop.model;
+package dev.zacharyajohnson.wanikani.desktop.backend.model;
 
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.Objects;
 
-import dev.zacharyajohnson.wanikani.desktop.enums.MasteryLevel;
+import dev.zacharyajohnson.wanikani.desktop.backend.enums.MasteryLevel;
 
 public abstract class JapaneseWriting {
 

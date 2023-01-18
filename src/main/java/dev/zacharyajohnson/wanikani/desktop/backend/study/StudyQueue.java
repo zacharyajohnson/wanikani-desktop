@@ -1,6 +1,6 @@
-package dev.zacharyajohnson.wanikani.desktop.study;
+package dev.zacharyajohnson.wanikani.desktop.backend.study;
 
-import dev.zacharyajohnson.wanikani.desktop.model.JapaneseWriting;
+import dev.zacharyajohnson.wanikani.desktop.backend.model.JapaneseWriting;
 
 import java.util.LinkedList;
 import java.util.List;

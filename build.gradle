@@ -1,8 +1,36 @@
 plugins {
     id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 mainClassName = 'dev.zacharyajohnson.wanikani.desktop.WaniKani'
+
+repositories  {
+    mavenCentral()
+}
+
+javafx {
+    version = "18"
+    modules = [ 'javafx.controls', 'javafx.graphics', 'javafx.fxml' ]
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0';
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.14.0';
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    implementation 'com.h2database:h2:2.1.214';
+
+    // https://mvnrepository.com/artifact/org.liquibase/liquibase-core
+    implementation group: 'org.liquibase', name: 'liquibase-core', version: '4.2.2'
+
+
+    // https://mvnrepository.com/artifact/org.mybatis/mybatis
+    implementation group: 'org.mybatis', name: 'mybatis', version: '3.5.7'
+
+    testImplementation 'org.mockito:mockito-core:4.11.0';
+    testImplementation 'junit:junit:4.13.2';
+}
 
 jar {
     manifest{

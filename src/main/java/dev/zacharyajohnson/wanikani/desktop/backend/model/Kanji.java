@@ -1,7 +1,7 @@
 
-package dev.zacharyajohnson.wanikani.desktop.model;
+package dev.zacharyajohnson.wanikani.desktop.backend.model;
 
-import dev.zacharyajohnson.wanikani.desktop.enums.ImportantKanjiReading;
+import dev.zacharyajohnson.wanikani.desktop.backend.enums.ImportantKanjiReading;
 
 public final class Kanji extends JapaneseWriting {
    
