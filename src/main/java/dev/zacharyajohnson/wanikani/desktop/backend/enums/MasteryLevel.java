@@ -1,4 +1,4 @@
-package dev.zacharyajohnson.wanikani.desktop.enums;
+package dev.zacharyajohnson.wanikani.desktop.backend.enums;
 
 public enum MasteryLevel {
     APPRENTICE("Apprentice"), GURU("Guru"), MASTER("Master"), ENLIGHTENED("Enlightened"), BURNED("Burned");

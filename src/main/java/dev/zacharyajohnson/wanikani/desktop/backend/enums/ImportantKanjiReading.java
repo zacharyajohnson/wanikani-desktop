@@ -1,4 +1,4 @@
-package dev.zacharyajohnson.wanikani.desktop.enums;
+package dev.zacharyajohnson.wanikani.desktop.backend.enums;
 
 public enum ImportantKanjiReading {
     ONYOMI, KUNYOMI, NANORI

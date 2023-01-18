@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="Create User Table" author="zacharyajohnson" context="production,unit-test">
+        <createTable tableName="USERS">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_USERS"/>
+            </column>
+
+            <column name="USER_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="LEVEL" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="API_KEY" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="LOGGED_IN" type="BIT">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
