@@ -12,7 +12,7 @@ import java.net.MalformedURLException;
 public abstract class WaniKaniStage extends Stage {
     protected WaniKaniStage() {
         this.initStyle(StageStyle.DECORATED);
-        this.getIcons().add(new Image("/gui/common/app_icon.png"));
+        this.getIcons().add(new Image("/gui/common/app-icon.png"));
         this.setTitle("WaniKani Desktop");
     }
 
