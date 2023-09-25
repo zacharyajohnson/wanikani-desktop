@@ -1,5 +1,6 @@
 package dev.zacharyajohnson.wanikani.desktop.ui.login;
 
+import dev.zacharyajohnson.wanikani.desktop.backend.service.Services;
 import dev.zacharyajohnson.wanikani.desktop.ui.home.HomeStage;
 import dev.zacharyajohnson.wanikani.desktop.ui.common.exception.ExceptionDialog;
 import dev.zacharyajohnson.wanikani.desktop.backend.model.User;
@@ -20,7 +21,7 @@ public class LoginController {
     @FXML
     private TextField apiV2Key;
 
-    private final UserService userService = new UserService();
+    private final UserService userService = Services.userService;
     private final WaniKaniApi waniKaniApi = WaniKaniApiV2.getInstance();
 
     @FXML

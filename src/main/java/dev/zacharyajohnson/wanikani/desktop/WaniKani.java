@@ -1,10 +1,10 @@
 package dev.zacharyajohnson.wanikani.desktop;
 
+import dev.zacharyajohnson.wanikani.desktop.backend.service.Services;
 import dev.zacharyajohnson.wanikani.desktop.ui.home.HomeStage;
 import dev.zacharyajohnson.wanikani.desktop.ui.common.exception.ExceptionDialog;
 import dev.zacharyajohnson.wanikani.desktop.ui.login.LoginStage;
 import dev.zacharyajohnson.wanikani.desktop.backend.model.User;
-import dev.zacharyajohnson.wanikani.desktop.backend.service.UserService;
 import dev.zacharyajohnson.wanikani.desktop.backend.web.api.v2.WaniKaniApiV2;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -44,7 +44,7 @@ public final class WaniKani extends Application {
     @Override
     public void start(Stage stage) {
         LoginStage loginStage = new LoginStage();
-        User loggedInUser = new UserService().getLoggedInUser();
+        User loggedInUser = Services.userService.getLoggedInUser();
 
         if (loggedInUser == null) {
             loginStage.show();
