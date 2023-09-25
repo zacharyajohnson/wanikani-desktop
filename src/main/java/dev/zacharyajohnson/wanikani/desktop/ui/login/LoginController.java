@@ -1,6 +1,7 @@
 package dev.zacharyajohnson.wanikani.desktop.ui.login;
 
 import dev.zacharyajohnson.wanikani.desktop.backend.service.Services;
+import dev.zacharyajohnson.wanikani.desktop.backend.web.api.model.WaniKaniUser;
 import dev.zacharyajohnson.wanikani.desktop.ui.home.HomeStage;
 import dev.zacharyajohnson.wanikani.desktop.ui.common.exception.ExceptionDialog;
 import dev.zacharyajohnson.wanikani.desktop.backend.model.User;
@@ -30,14 +31,20 @@ public class LoginController {
         waniKaniApi.setApiKey(apiV2Key.getText());
 
         try {
-            Optional<User> userOptional = waniKaniApi.getUser()
+            Optional<WaniKaniUser> waniKaniUserOptional = waniKaniApi.getUser()
                     .get();
 
-            if (userOptional.isEmpty()) {
+            if (waniKaniUserOptional.isEmpty()) {
                 throw new RuntimeException("Could not get User info. Please try again.");
             }
 
-            User user = userOptional.get();
+            WaniKaniUser waniKaniUser = waniKaniUserOptional.get();
+
+            User user = new User();
+            user.setId(waniKaniUser.id());
+            user.setUsername(waniKaniUser.username());
+            user.setLevel(waniKaniUser.level());
+            user.setApiKey(waniKaniUser.apiKey());
             user.setLoggedIn(true);
 
             if (userService.getUserBy(user.getId()) != null) {

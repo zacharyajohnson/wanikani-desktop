@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.zacharyajohnson.wanikani.desktop.backend.model.User;
 import dev.zacharyajohnson.wanikani.desktop.backend.web.api.Http401Exception;
 import dev.zacharyajohnson.wanikani.desktop.backend.web.api.WaniKaniApi;
+import dev.zacharyajohnson.wanikani.desktop.backend.web.api.model.WaniKaniUser;
 
 import java.net.*;
 import java.net.http.HttpClient;
@@ -17,7 +18,7 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public final class WaniKaniApiV2 implements WaniKaniApi {
-    private String apiKey;
+    private static String apiKey;
 
     private static final HttpClient httpClient  = HttpClient.newBuilder()
             .connectTimeout(Duration.ofSeconds(10L))
@@ -34,16 +35,16 @@ public final class WaniKaniApiV2 implements WaniKaniApi {
 
     @Override
     public void setApiKey(String apiKey) {
-        this.apiKey = apiKey;
+        WaniKaniApiV2.apiKey = apiKey;
     }
 
     @Override
     public String getApiKey() {
-        return this.apiKey;
+        return apiKey;
     }
 
     @Override
-    public CompletableFuture<Optional<User>> getUser() throws Http401Exception {
+    public CompletableFuture<Optional<WaniKaniUser>> getUser() throws Http401Exception {
 
         HttpRequest request = this.createHttpRequestBuilder(apiKey, WaniKaniApiV2Endpoint.USER_ENDPOINT)
                 .GET()
@@ -59,12 +60,11 @@ public final class WaniKaniApiV2 implements WaniKaniApi {
                         ObjectMapper mapper = new ObjectMapper();
                         JsonNode jsonNode = mapper.readTree(response.body()).get("data");
 
+                        String id = jsonNode.get("id").asText();
+                        int level = jsonNode.get("id").asInt();
+                        String username = jsonNode.get("username").asText();
 
-                        User user = new User();
-                        user.setApiKey(apiKey);
-                        user.setId(jsonNode.get("id").asText());
-                        user.setLevel(jsonNode.get("level").asInt());
-                        user.setUsername(jsonNode.get("username").asText());
+                        WaniKaniUser user = new WaniKaniUser(id,username,level,apiKey);
 
                         return Optional.of(user);
                     } catch (JsonProcessingException e) {
