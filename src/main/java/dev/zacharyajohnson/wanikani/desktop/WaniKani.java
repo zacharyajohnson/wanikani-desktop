@@ -5,7 +5,7 @@ import dev.zacharyajohnson.wanikani.desktop.ui.home.HomeStage;
 import dev.zacharyajohnson.wanikani.desktop.ui.common.exception.ExceptionDialog;
 import dev.zacharyajohnson.wanikani.desktop.ui.login.LoginStage;
 import dev.zacharyajohnson.wanikani.desktop.backend.model.User;
-import dev.zacharyajohnson.wanikani.desktop.backend.web.api.v2.WaniKaniApiV2;
+import dev.zacharyajohnson.wanikani.desktop.web.api.v2.WaniKaniApiV2;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;

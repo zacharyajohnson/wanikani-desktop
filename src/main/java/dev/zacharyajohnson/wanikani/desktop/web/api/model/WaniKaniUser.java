@@ -1,4 +1,4 @@
-package dev.zacharyajohnson.wanikani.desktop.backend.web.api.model;
+package dev.zacharyajohnson.wanikani.desktop.web.api.model;
 
 public record WaniKaniUser(String id,
                            String username,

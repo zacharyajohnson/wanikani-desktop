@@ -1,7 +1,6 @@
-package dev.zacharyajohnson.wanikani.desktop.backend.web.api;
+package dev.zacharyajohnson.wanikani.desktop.web.api;
 
-import dev.zacharyajohnson.wanikani.desktop.backend.model.User;
-import dev.zacharyajohnson.wanikani.desktop.backend.web.api.model.WaniKaniUser;
+import dev.zacharyajohnson.wanikani.desktop.web.api.model.WaniKaniUser;
 
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;

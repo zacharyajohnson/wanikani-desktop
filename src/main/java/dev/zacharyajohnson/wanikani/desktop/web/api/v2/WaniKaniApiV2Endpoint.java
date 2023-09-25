@@ -1,4 +1,4 @@
-package dev.zacharyajohnson.wanikani.desktop.backend.web.api.v2;
+package dev.zacharyajohnson.wanikani.desktop.web.api.v2;
 
 public enum WaniKaniApiV2Endpoint {
     USER_ENDPOINT("https://api.wanikani.com/v2/user");
