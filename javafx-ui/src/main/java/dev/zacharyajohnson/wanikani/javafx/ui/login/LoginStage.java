@@ -9,7 +9,7 @@ public class LoginStage extends WaniKaniStage {
         super();
 
         super.setStageTitle("Login");
-        super.loadFXML("/gui/login/login.fxml");
+        super.loadFXML("/login/login.fxml");
 
         this.centerOnScreen();
         //this.setResizable(false);

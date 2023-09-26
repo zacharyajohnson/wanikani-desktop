@@ -1,5 +1,5 @@
 #login-border-pane {
-    -fx-background-image: url('/gui/login/login_background.jpg');
+    -fx-background-image: url('/login/login-background.jpg');
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
 }

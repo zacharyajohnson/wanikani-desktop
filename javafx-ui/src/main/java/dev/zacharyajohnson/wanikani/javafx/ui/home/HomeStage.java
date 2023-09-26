@@ -8,7 +8,7 @@ public class HomeStage extends WaniKaniStage {
         super();
 
         super.setStageTitle("Home");
-        super.loadFXML("/gui/home/home-page.fxml");
+        super.loadFXML("/home/home-page.fxml");
 
         this.setHeight(Screen.getPrimary().getVisualBounds().getHeight());
         this.setWidth(Screen.getPrimary().getVisualBounds().getWidth());
