@@ -1,5 +1,6 @@
 package dev.zacharyajohnson.wanikani.desktop.web.api;
 
+import dev.zacharyajohnson.wanikani.desktop.web.api.exception.Http401Exception;
 import dev.zacharyajohnson.wanikani.desktop.web.api.model.WaniKaniUser;
 
 import java.util.Optional;

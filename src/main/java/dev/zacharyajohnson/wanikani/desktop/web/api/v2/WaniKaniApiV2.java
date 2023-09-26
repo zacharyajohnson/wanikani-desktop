@@ -3,7 +3,7 @@ package dev.zacharyajohnson.wanikani.desktop.web.api.v2;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.zacharyajohnson.wanikani.desktop.web.api.Http401Exception;
+import dev.zacharyajohnson.wanikani.desktop.web.api.exception.Http401Exception;
 import dev.zacharyajohnson.wanikani.desktop.web.api.model.WaniKaniUser;
 import dev.zacharyajohnson.wanikani.desktop.web.api.WaniKaniApi;
 

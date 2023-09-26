@@ -1,4 +1,4 @@
-package dev.zacharyajohnson.wanikani.desktop.web.api;
+package dev.zacharyajohnson.wanikani.desktop.web.api.exception;
 
 public class Http401Exception extends RuntimeException {
     public Http401Exception() {
