@@ -1,0 +1,32 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+mainClassName = 'dev.zacharyajohnson.wanikani.javafx.ui.WaniKaniJavaFxUi'
+
+repositories  {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+javafx {
+    version = "21"
+    modules = [ 'javafx.controls', 'javafx.graphics', 'javafx.fxml' ]
+}
+
+jar {
+    manifest{
+        attributes "Main-Class": mainClassName
+    }
+    archiveBaseName = 'wanikani-desktop'
+}
+
+dependencies {
+    implementation project(path: ':local-backend')
+    implementation project(path: ':web-api')
+}

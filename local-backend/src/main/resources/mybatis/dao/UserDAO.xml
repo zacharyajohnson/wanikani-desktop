@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.zacharyajohnson.wanikani.local.backend.dao.UserDAO">
+
+    <resultMap id = "UserResult" type = "User">
+        <result property = "id" column = "ID"/>
+        <result property = "username" column = "USER_NAME"/>
+        <result property = "level" column = "LEVEL"/>
+        <result property = "apiKey" column = "API_KEY"/>
+        <result property = "loggedIn" column = "LOGGED_IN"/>
+    </resultMap>
+
+    <select id="getUser" parameterType="String" resultMap="UserResult">
+        SELECT
+               *
+        FROM
+             USERS
+        WHERE
+            ID = #{id}
+    </select>
+
+    <insert id="createUser" parameterType="User">
+        INSERT INTO
+            USERS(ID, USER_NAME, LEVEL, API_KEY, LOGGED_IN)
+            VALUES(#{id}, #{username}, #{level}, #{apiKey}, #{loggedIn})
+    </insert>
+
+    <select id="getLoggedInUser" resultMap="UserResult">
+        SELECT *
+        FROM
+            USERS
+        WHERE
+            LOGGED_IN = true
+    </select>
+
+    <update id="updateUser" parameterType="User">
+        UPDATE USERS
+            SET LOGGED_IN = #{loggedIn}, USER_NAME = #{username}, LEVEL = #{level},
+                API_KEY = #{apiKey}
+            WHERE ID = #{id}
+    </update>
+</mapper>

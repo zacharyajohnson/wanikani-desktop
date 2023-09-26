@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane id="login-border-pane" xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="dev.zacharyajohnson.wanikani.javafx.ui.login.LoginController">
+    <stylesheets>
+        <URL value="@login.css"/>
+    </stylesheets>
+    <center>
+        <VBox id="login-vbox">
+            <TextField fx:id="apiV2Key" id="api-text-field" text="API KEY"/>
+            <Button id="login-button" text="Login" onAction="#authenticateUser"/>
+        </VBox>
+    </center>
+</BorderPane>
