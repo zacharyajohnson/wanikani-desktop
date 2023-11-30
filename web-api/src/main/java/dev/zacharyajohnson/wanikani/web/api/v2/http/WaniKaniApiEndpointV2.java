@@ -1,11 +1,11 @@
-package dev.zacharyajohnson.wanikani.web.api.v2;
+package dev.zacharyajohnson.wanikani.web.api.v2.http;
 
-public enum WaniKaniApiV2Endpoint {
+public enum WaniKaniApiEndpointV2 {
     USER_ENDPOINT("https://api.wanikani.com/v2/user");
 
     private final String URL;
 
-    WaniKaniApiV2Endpoint(String URL) {
+    WaniKaniApiEndpointV2(String URL) {
         this.URL = URL;
     }
 
